@@ -1,0 +1,20 @@
+version: '3'
+services:
+  config:
+    image: balutek-shop/config
+    ports:
+     - "8888:8888"
+    restart: always
+    networks:
+     - webnet
+
+  eureka:
+    image: balutek-shop/eureka
+    ports:
+     - "8761:8761"
+    restart: always
+    networks:
+     - webnet
+
+networks:
+  webnet:
