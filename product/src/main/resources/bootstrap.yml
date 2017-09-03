@@ -4,7 +4,7 @@ shop:
 
 spring:
   application:
-    name: eureka
+    name: product
   cloud:
     config:
       uri: http://${shop.config.hostname}:8888

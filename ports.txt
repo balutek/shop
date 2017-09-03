@@ -1,0 +1,5 @@
+1001 - product
+1002 - auth
+1005 - cart
+8761 - eureka
+8888 - config

@@ -4,9 +4,13 @@ services:
     image: balutek-shop/config
     ports:
      - "8888:8888"
+    volumes:
+     - C:/my/shop-config:/tmp/shop-config
     restart: always
     networks:
      - webnet
+    environment:
+      SPRING_PROFILES_ACTIVE: native
 
   eureka:
     image: balutek-shop/eureka
@@ -15,6 +19,26 @@ services:
     restart: always
     networks:
      - webnet
+
+  redis1:
+    image: balutek-shop/redis
+    ports:
+     - "1001:1001"
+    restart: always
+    networks:
+     - webnet
+    environment:
+      SPRING_PROFILES_ACTIVE: firstWord
+
+  redis2:
+    image: balutek-shop/redis
+    ports:
+     - "1002:1001"
+    restart: always
+    networks:
+     - webnet
+    environment:
+      SPRING_PROFILES_ACTIVE: secondWord
 
 networks:
   webnet:

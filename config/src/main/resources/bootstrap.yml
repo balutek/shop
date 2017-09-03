@@ -4,6 +4,29 @@ server:
 spring:
   application:
     name: config
+  profiles:
+    include: native
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: file:C://my/shop-config/
+
+---
+spring.profiles: docker
+
+spring:
+  profiles:
+    include: native
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: file:/tmp/shop-config
+
+---
+spring:
+  profiles: production
   cloud:
     config:
       server:
