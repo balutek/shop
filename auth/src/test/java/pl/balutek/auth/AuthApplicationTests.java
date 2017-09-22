@@ -1,4 +1,4 @@
-package pl.balutek.authorization;
+package pl.balutek.auth;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

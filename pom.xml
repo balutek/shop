@@ -28,23 +28,17 @@
   <parent>
     <groupId>org.springframework.cloud</groupId>
     <artifactId>spring-cloud-starter-parent</artifactId>
-    <version>Dalston.RELEASE</version>
-    <relativePath/>
+    <version>Dalston.SR3</version>
   </parent>
 
-  <!--<dependencyManagement>-->
-    <!--<dependencies>-->
-      <!--<dependency>-->
-        <!--<groupId>org.springframework.cloud</groupId>-->
-        <!--<artifactId>spring-cloud-dependencies</artifactId>-->
-        <!--<version>Dalston.RELEASE</version>-->
-        <!--<type>pom</type>-->
-        <!--<scope>import</scope>-->
-      <!--</dependency>-->
-    <!--</dependencies>-->
-  <!--</dependencyManagement>-->
-
   <dependencies>
+
+    <dependency>
+      <groupId>pl.balutek</groupId>
+      <artifactId>common</artifactId>
+      <version>0.0.1</version>
+    </dependency>
+
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-config</artifactId>

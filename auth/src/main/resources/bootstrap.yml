@@ -9,6 +9,10 @@ spring:
     config:
       uri: http://${shop.config.hostname}:8888
       failFast: true
+security:
+  basic:
+    enabled: false
+
 
 ---
 spring.profiles: docker

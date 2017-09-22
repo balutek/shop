@@ -12,6 +12,10 @@ spring:
         native:
           searchLocations: file:C://my/shop-config/
 
+security:
+  basic:
+    enabled: false
+
 ---
 spring.profiles: docker
 

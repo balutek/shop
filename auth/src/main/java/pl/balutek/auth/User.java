@@ -1,4 +1,4 @@
-package pl.balutek.authorization;
+package pl.balutek.auth;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

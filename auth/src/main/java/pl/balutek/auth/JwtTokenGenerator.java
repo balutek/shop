@@ -1,15 +1,15 @@
-package pl.balutek.authorization;
+package pl.balutek.auth;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import java.io.ByteArrayOutputStream;
 import java.nio.file.Files;
 import java.security.KeyFactory;
 import java.security.PrivateKey;
 import java.security.spec.PKCS8EncodedKeySpec;
+import java.util.Collections;
 import java.util.Date;
+import java.util.UUID;
 import javax.annotation.PostConstruct;
-import javax.validation.constraints.NotNull;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
@@ -29,8 +29,10 @@ public class JwtTokenGenerator {
 
     public String generate(User user) {
         return Jwts.builder()
+            .setId(UUID.randomUUID().toString())
             .setIssuedAt(new Date())
             .setSubject(user.getLogin())
+            .claim("roles", Collections.singletonList("USER"))
             .signWith(SignatureAlgorithm.RS512, privateRsaKey)
             .compact();
     }
